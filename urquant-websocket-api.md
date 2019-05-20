@@ -28,9 +28,9 @@ param: 参数为选填参数，根据赶快件名称来决定参数体内容，�
  "timestamp": 1558335839000
 }
 ```
-请求说明
-op:ping为操作类型
-timestamp:为时间戳
+请求说明   
+op:ping为操作类型   
+timestamp:为时间戳   
 
 ```
 # Response
@@ -46,7 +46,7 @@ timestamp:为时间戳
 #### 2. 登录到urquant API平台
 
 ```
-请求方向：Client->APIServer
+请求方向：Client->APIServer   
 # Request 
 {
 	"id":1,
@@ -63,7 +63,7 @@ timestamp:为时间戳
 	}
 }
 ```
-请求说明
+请求说明   
 id(int64):客户端带过来id   
 op(string):login表示登录   
 serverid(int32):  量化策略程序编号id，不允许重复   
@@ -85,11 +85,11 @@ statuslist(json):同步当前策略程序支持的产品id与最大负载等信�
 ```
 
 返回值说明	
-如果在一定时间内没有登录成功，会被断开连接
-id:客户端请求带过来的id
-op:操作类型
-code:错误代码
-data:如果错误，返回错误信息
+如果在一定时间内没有登录成功，会被断开连接   
+id:客户端请求带过来的id   
+op:操作类型   
+code:错误代码   
+data:如果错误，返回错误信息   
 
 
 #### 3. 同步账号
@@ -110,14 +110,14 @@ data:如果错误，返回错误信息
 	}
 }
 ```
-请求说明
-id:客户端带来id
-op:同步账号状态
-serverid:服务器id
-pid:正在运行的产品id
-apikey:交易所apikey
-state: 0 停止  1 运行
-msg:附带停止和运行原因内容
+请求说明   
+id:客户端带来id   
+op:同步账号状态   
+serverid:服务器id   
+pid:正在运行的产品id   
+apikey:交易所apikey   
+state: 0 停止  1 运行   
+msg:附带停止和运行原因内容   
 
 ```
 # Response
@@ -128,10 +128,10 @@ msg:附带停止和运行原因内容
 	"data":"ok"
 }
 ```
-id: 客户端带来id
-op:同步账号状态
-code:错误代码
-data:如果错误，返回错误信息
+id: 客户端带来id   
+op:同步账号状态   
+code:错误代码   
+data:如果错误，返回错误信息   
 
 
 ####4. 策略控制
@@ -149,12 +149,12 @@ data:如果错误，返回错误信息
 }
 ```
 
-请求说明
-id:服务器带来id
-op:策略控制
-pid:产品id
-apikey:正在控制的apikey
-optype:0表示停止策略   1表示启动策略
+请求说明   
+id:服务器带来id   
+op:策略控制   
+pid:产品id   
+apikey:正在控制的apikey   
+optype:0表示停止策略   1表示启动策略   
 
 
 ```
@@ -174,10 +174,10 @@ optype:0表示停止策略   1表示启动策略
 }
 
 ```
-id: 服务器带来id
-op:同步账号状态
-code:错误代码
-data:如果错误，返回错误信息
+id: 服务器带来id   
+op:同步账号状态   
+code:错误代码   
+data:如果错误，返回错误信息   
 
 #### 5. 同步负载情况
 ```
@@ -194,12 +194,12 @@ data:如果错误，返回错误信息
 }
 ```
 
-请求说明
-op:量化程序同步负载状态
-pid:产品id
-currentload:当前负载api数
-maxoverload:最大允许负载api数量
-注意：如果量化程序需要暂停提供新api服务，可以传入maxoverload为0
+请求说明   
+op:量化程序同步负载状态   
+pid:产品id   
+currentload:当前负载api数   
+maxoverload:最大允许负载api数量   
+注意：如果量化程序需要暂停提供新api服务，可以传入maxoverload为0   
 
 
 ```
