@@ -139,13 +139,17 @@ data:如果错误，返回错误信息
 请求方向：APIServer->Client
 # Request 
 {
-	"id":1,
+	"id": 1,
 	"op": "accountcontrol",
 	"param": {
-			"pid": 100001,
-			"apikey":"985d5b66-57ce-40fb-b714-afc0b9787083",
-			"optype":1
-			}
+		"pid": 100001,
+		"apikey": "985d5b66-57ce-40fb-b714-afc0b9787083",
+		"optype": 1,
+		"strategyparam": {
+			"key1": "value1",
+			"key2": "value2"
+		}
+	}
 }
 ```
 
@@ -155,7 +159,7 @@ op:策略控制
 pid:产品id   
 apikey:正在控制的apikey   
 optype:0表示停止策略   1表示启动策略   
-
+strategyparam:策略参数，由用户填写的规范数据
 
 ```
 # Response
